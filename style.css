@@ -1,10 +1,10 @@
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
+    --color-primary: #48A6A7;
+    --color-secondary: #F2EFE7;
+    --color-tertiary: #FD8B51;
+    --color-button: #FD8B51;
+    --color-button-hover: #fe652b;
+    --color-text: #fafafa;
     --color-white: #FFFFFF;
 }
 
@@ -16,9 +16,10 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background-color: var(--color-primary);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -26,6 +27,7 @@ body {
 .main-content {
     display: flex;
     flex-direction: column;
+    flex: 1;
     height: 100%;
     width: 100%;
 }
@@ -85,6 +87,7 @@ body {
     border: 2px solid #000;
     border-radius: 25px 0 0 25px;
     font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .button-container {
@@ -113,6 +116,7 @@ button {
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .button-add {
@@ -122,13 +126,13 @@ button {
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: #fe652b;
 }
 
 /* Listas */
 ul {
     list-style-type: none;
-    color: var(--color-text);
+    color: var(--color-primary);
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
@@ -136,10 +140,20 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: #4DA1A9;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+    display: flex;
+    flex-direction: line;
+}
+
+#apresentacao {
+    margin-right: 10px;
+}
+
+#resultado-amigo {
+    color: #FD8B51;
 }
 
 /* Botão de sortear título */
@@ -159,4 +173,28 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 0 0 64px 64px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 1px;
+}
+
+.footer p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: var(--color-primary);
+}
+
+.footer a {
+    color: var(--color-tertiary);
+    text-decoration: none;
 }
