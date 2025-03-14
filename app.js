@@ -42,15 +42,18 @@ function sortearAmigoSecreto() {
 
     let amigosDisponiveis = [...amigos];
     let resultado = [];
+    let amigoAtual = amigosDisponiveis.splice(Math.floor(Math.random() * amigosDisponiveis.length), 1)[0];
+    let primeiroAmigo = amigoAtual;
 
-    amigos.forEach(amigo => {
+
+    while (amigosDisponiveis.length > 0) {
         let indiceAleatorio = Math.floor(Math.random() * amigosDisponiveis.length);
-        while (amigosDisponiveis[indiceAleatorio] === amigo) {
-            indiceAleatorio = Math.floor(Math.random() * amigosDisponiveis.length);
-        }
         let amigoSorteado = amigosDisponiveis.splice(indiceAleatorio, 1)[0];
-        resultado.push(`${amigo} tirou: ${amigoSorteado}`);
-    });
+        resultado.push(`${amigoAtual} tirou: ${amigoSorteado}`);
+        amigoAtual = amigoSorteado;
+    }
+
+    resultado.push(`${amigoAtual} tirou: ${primeiroAmigo}`);
 
     document.getElementById('apresentacao').textContent = 'Resultado do sorteio:';
     document.getElementById('resultado-amigo').innerHTML = resultado.join('<br>');
