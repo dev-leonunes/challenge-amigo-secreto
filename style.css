@@ -132,10 +132,39 @@ button {
 /* Listas */
 ul {
     list-style-type: none;
-    color: var(--color-primary);
+    color: var(--color-text);
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 0 15px;
+    border: #000 2px solid;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+}
+
+.button-remove {
+    margin-left: 10px;
+    color: var(--color-text);
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 15px 0 0 0;
+}
+
+.button-remove:hover {
+    color: red;
 }
 
 .result-list {
@@ -150,10 +179,16 @@ ul {
 
 #apresentacao {
     margin-right: 10px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 #resultado-amigo {
     color: #FD8B51;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 /* Botão de sortear título */
