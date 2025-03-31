@@ -11,6 +11,12 @@ function adicionarAmigo() {
     }
 }
 
+document.getElementById('amigo').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        adicionarAmigo();
+    }
+});
+
 function removerAmigo(index) {
     amigos.splice(index, 1);
     atualizarListaAmigos();
@@ -57,4 +63,38 @@ function sortearAmigoSecreto() {
 
     document.getElementById('apresentacao').textContent = 'Resultado do sorteio:';
     document.getElementById('resultado-amigo').innerHTML = resultado.join('<br>');
+    document.querySelector('.button-draw').innerHTML = `
+    <img src="assets/play_circle_outline.png" alt="Ícone para sortear">
+    Sortear Novamente?
+`;
+    criarBotaoReset();
+}
+
+function criarBotaoReset() {
+    const container = document.querySelector('.button-container');
+
+    if (document.querySelector('.button-reset')) {
+        return;
+    }
+
+    const botaoReset = document.createElement('button');
+    botaoReset.className = 'button-reset';
+    botaoReset.innerHTML = `
+        <img src="assets/icon-dice.png" alt="Ícone de reset">
+        Novo Sorteio
+    `;
+
+    botaoReset.onclick = () => {
+        amigos = [];
+        atualizarListaAmigos();
+        document.getElementById('resultado-amigo').innerHTML = '';
+        document.getElementById('apresentacao').innerHTML = '';
+        botaoReset.remove();
+        document.querySelector('.button-draw').innerHTML = `
+            <img src="assets/play_circle_outline.png" alt="Ícone para sortear">
+            Sortear amigo
+        `;
+    };
+
+    container.appendChild(botaoReset);
 }

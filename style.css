@@ -1,10 +1,12 @@
 :root {
     --color-primary: #48A6A7;
-    --color-secondary: #F2EFE7;
+    /* --color-secondary: #F2EFE7; */
+    --color-secondary: #ede7dc;
     --color-tertiary: #FD8B51;
     --color-button: #FD8B51;
-    --color-button-hover: #fe652b;
+    --color-button-hover: #02a698;
     --color-text: #fafafa;
+    --color-text-secondary: #48A6A7;
     --color-white: #FFFFFF;
 }
 
@@ -41,6 +43,13 @@ body {
     padding: 40px 0 0;
 }
 
+.header-banner img {
+    position: relative;
+    z-index: -1;
+    width: 450px;
+    height: 273px;
+}
+
 /* Seção de entrada */
 .input-section {
     flex: 60%;
@@ -60,14 +69,14 @@ body {
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 .section-title {
     font-family: "Inter", serif;
     font-size: 36px;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-text-secondary);
     margin: 10px 0;
     text-align: center;
 }
@@ -120,13 +129,14 @@ button {
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-button);
     color: var(--color-text);
     border-radius: 0 25px 25px 0;
 }
 
 .button-add:hover {
-    background-color: #fe652b;
+    background-color: var(--color-button-hover);
+    transition: color .33s linear .5s, border-color ease-out .5s, background-color .33s linear 0s;
 }
 
 /* Listas */
@@ -208,6 +218,28 @@ ul li {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+    transition: color .33s linear .5s, border-color ease-out .5s, background-color .33s linear 0s;
+}
+
+.button-reset {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+}
+
+.button-reset:hover {
+    background-color: var(--color-button-hover);
+    transition: background-color 0.3s ease;
+}
+
+.button-reset img {
+    margin-right: 40px;
+    width: 35px;
+    height: 35px;
 }
 
 /* Rodapé */
